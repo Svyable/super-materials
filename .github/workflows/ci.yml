@@ -1,0 +1,26 @@
+name: integrity
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Test transparent research utilities
+        env:
+          PYTHONPATH: src
+        run: python -m unittest discover -s tests -v
+      - name: Validate public research artifact
+        run: |
+          test -s README.md
+          test -s docs/index.html
+          test -s data/claim_evidence_graph_v06.json
+          test -s data/experiment_decisions_v06.csv
+          python -m json.tool data/claim_evidence_graph_v06.json >/dev/null
+          python -m json.tool data/screening_features_v06.json >/dev/null
+          grep -qi 'experimental proof' README.md
+          grep -qi 'falsifier' docs/index.html

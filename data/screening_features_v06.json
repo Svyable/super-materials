@@ -1,0 +1,33 @@
+{
+  "version": "0.6.0",
+  "policy": "Descriptors can prioritize DFPT labels but cannot promote a superconductivity claim without first-principles EPC and stability evidence.",
+  "features": [
+    {
+      "id": "D_GEO_H",
+      "name": "H-active DOS geometric mean",
+      "definition": "sqrt(D_total(E_F) * D_H(E_F))",
+      "role": "cheap pre-DFPT acquisition feature",
+      "cost": "electronic structure / projected DOS",
+      "reference": "https://doi.org/10.1038/s41524-026-02040-x",
+      "limitation": "Family-level correlation; does not encode EPC matrix elements, phonon scale, anharmonicity or stability."
+    },
+    {
+      "id": "P_PHONON_NEST",
+      "name": "phonon-assisted nesting",
+      "definition": "P(omega), optionally normalized as P/(m* M)",
+      "role": "necessary-condition / rejection and acquisition feature",
+      "cost": "cheaper than full EPC in the proposed workflow",
+      "reference": "https://doi.org/10.1038/s41524-026-02160-4",
+      "limitation": "Small validation set; never map directly to Tc."
+    },
+    {
+      "id": "ALPHA2F_ENSEMBLE",
+      "name": "ensemble alpha2F surrogate",
+      "definition": "predict alpha^2F(omega,P) with uncertainty and OOD score",
+      "role": "active-learning proposer",
+      "cost": "surrogate inference plus selected DFPT labels",
+      "reference": "https://doi.org/10.1038/s41524-026-01964-8",
+      "limitation": "Published BEE-NET is not directly hydride-ready; pressure/high-frequency extension must be validated."
+    }
+  ]
+}

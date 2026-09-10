@@ -1,0 +1,11 @@
+{
+  "version":"0.6.0",
+  "candidates":[
+    {"id":"MIRH-25","formula":"Mg2Ir0.75Rh0.25H6","pressure_GPa":[15,30],"model_tc_K":150,"evidence":"speculative toy-model screening","kill":"no stable ordered/SQS basin after hull + phonon search"},
+    {"id":"LMBH-25","formula":"Li1.75Mg0.25BH6-delta","pressure_GPa":[12,25],"model_tc_K":224,"evidence":"speculative toy-model screening","kill":"aliovalent tuning self-compensates through hydrogen vacancies or destabilizes phase"},
+    {"id":"Q-MRH6","formula":"Mg2RhH6-delta","pressure_GPa":[0,30],"model_tc_K":null,"evidence":"experimental parent; recovery speculative","kill":"H6 fingerprints lost under every decompression protocol before any phase-linked transition"},
+    {"id":"MAFH-gradient","formula":"Mg2-xAlxFeH6-delta","pressure_GPa":[0,0],"model_tc_K":null,"evidence":"ab initio endpoint; derivative speculative","kill":"carrier density pins or realistic structures become magnetic/unstable"},
+    {"id":"L3-RC-H9","formula":"Li3Rh1-yCoyH9","pressure_GPa":[0,15],"model_tc_K":null,"evidence":"ab initio endpoints; alloy speculative","kill":"no contiguous stable low-pressure basin with high-fidelity Tc above 100 K"},
+    {"id":"YFRH20","formula":"Y3Fe3RuH20","pressure_GPa":[0,0],"model_tc_K":null,"evidence":"recovery motif; substitution speculative","kill":"recovered topology phase-separates or H DOS near EF remains negligible"}
+  ]
+}

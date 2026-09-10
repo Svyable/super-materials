@@ -1,0 +1,10 @@
+year,system,class,pressure_GPa,Tc_K,lesson,evidence,reference
+2026,Mg2RhH6,hydride,30-53,24-29,Two-step H5 precursor to H6 octahedral phase enables superconductivity at accessible high pressure,EXPERIMENTAL_PRIMARY,https://doi.org/10.1021/jacs.6c08889
+2026,HgBa2Ca2Cu3O8+delta,cuprate,0,151,Pressure-quench demonstrates ambient-pressure retention of a higher-Tc state but not indefinite room-temperature retention,EXPERIMENTAL_PRIMARY,https://doi.org/10.1073/pnas.2536178123
+2026,H3S,hydride,134-155,203,QCP near 134 GPa motivates quantum-fluctuation-aware pressure trajectories,THEORY_PRIMARY_TIED_TO_EXPERIMENT,https://doi.org/10.1103/b1dd-gzf3
+2026,MgAlFeH6,hydride,0,130,Carrier engineering and geometric-mean H-active DOS proposed; high DOS competes with stability,AB_INITIO_PRIMARY,https://doi.org/10.1038/s41524-026-02040-x
+2026,BEE-NET,method,0,,Learning alpha2F is more structured than scalar Tc; published model is not directly high-pressure-hydride ready,METHOD_PRIMARY,https://doi.org/10.1038/s41524-026-01964-8
+2026,phonon-assisted nesting,method,,,P(omega)/(m*M) proposed as necessary-condition EPC screen on a small validation set,METHOD_PRIMARY,https://doi.org/10.1038/s41524-026-02160-4
+2025,ambient conventional search,method,0,,More than 20000 full EPC calculations and more than 100 million ML-screened compounds expose a persistent coupling-frequency-stability tradeoff,METHOD_PRIMARY,https://doi.org/10.1038/s41467-025-63702-w
+2024,NV magnetometry hydride DAC,measurement,,,Local magnetic imaging in DAC raises the evidentiary bar beyond transport alone,EXPERIMENTAL_METHOD_PRIMARY,https://www.nature.com/articles/s41586-024-07026-7
+2026,LaSc2H24,hydride,megabar,reported~298,Keep reported near-room-temperature transition visibly contested pending independent replication,REPORTED_PREPRINT_CONTESTED,https://arxiv.org/

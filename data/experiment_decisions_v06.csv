@@ -1,0 +1,7 @@
+id,hypothesis,test,prior,sensitivity,specificity,posterior_positive,posterior_negative,expected_information_bits,relative_cost,conditional,note
+QMRH6_phase_transport,Q-MRH6 recovery,same-state XRD/Raman plus four-probe field-sensitive transport,0.25,0.85,0.95,0.850,0.050,0.444,5.0,false,Illustrative planning likelihoods; phase linkage raises specificity.
+MAFH_defect_gate,MAFH carrier engineering,ordered/SQS defect and hydrogen-compensation gate,0.20,0.85,0.92,0.727,0.044,0.340,1.2,false,Cheap computational gate before synthesis.
+QMRH6_isotope_field,Q-MRH6 recovery,phase-matched H/D plus magnetic-field response,0.25,0.75,0.90,0.714,0.085,0.279,4.0,false,Requires matched phase fractions and pressure history.
+L3RCH9_stability_gate,Li3Rh1-yCoyH9,convex hull plus QNE-aware phonon stability,0.15,0.80,0.93,0.668,0.040,0.270,1.5,false,Reject isolated interpolation peaks.
+QMRH6_resistivity_only,Q-MRH6 recovery,resistivity drop without simultaneous phase identification,0.25,0.80,0.60,0.400,0.100,0.127,1.5,false,Useful screen but low specificity.
+QMRH6_gap_spectroscopy,Q-MRH6 mechanism,direct tunneling gap after lower-cost gates,0.60,0.95,0.97,0.979,0.179,0.510,10.0,true,Conditional prior after phase-linked transport and magnetic evidence.

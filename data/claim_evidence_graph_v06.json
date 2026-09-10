@@ -1,0 +1,30 @@
+{
+  "version": "0.6.0",
+  "claims": [
+    {"id":"C_AMBIENT_PRIOR","claim":"Equilibrium ambient-pressure conventional 300 K superconductivity deserves a low portfolio prior after massive EPC/ML search, but is not ruled out by theorem.","status":"portfolio inference"},
+    {"id":"C_QMRH6","claim":"Mg2RhH6 is worth a controlled decompression/retention campaign because its superconducting parent phase and formation pathway are experimentally established.","status":"experiment proposal"},
+    {"id":"C_QUENCH","claim":"Quenchability should be optimized separately from pairing scale.","status":"design rule"},
+    {"id":"C_MAFH","claim":"Mg/Al/Fe hydrides are a falsifiable ambient carrier-engineering lane if disorder, magnetism and H-vacancy compensation are handled explicitly.","status":"derivative hypothesis"},
+    {"id":"C_QCP","claim":"Pressure/composition/isotope trajectories near quantum structural criticality deserve explicit screening in hydrides.","status":"mechanism hypothesis"},
+    {"id":"C_PHYSICS_TRIAGE","claim":"Cheap physics descriptors may reduce wasted DFPT labels but must not become surrogate proof of high Tc.","status":"method hypothesis"}
+  ],
+  "evidence": [
+    {"id":"E_MRH6","title":"Experimental Mg2RhH6 superconductivity from 30 GPa","class":"experimental","reference":"https://doi.org/10.1021/jacs.6c08889"},
+    {"id":"E_HG1223","title":"151 K Hg1223 superconductivity retained to ambient pressure by pressure quench","class":"experimental","reference":"https://doi.org/10.1073/pnas.2536178123"},
+    {"id":"E_AMBIENT_CEILING","title":"Large-scale ambient conventional-superconductor search","class":"computation/method","reference":"https://doi.org/10.1038/s41467-025-63702-w"},
+    {"id":"E_MAFH","title":"Predicted ambient MgAlFeH6 and H-active DOS descriptor","class":"ab initio","reference":"https://doi.org/10.1038/s41524-026-02040-x"},
+    {"id":"E_QCP","title":"H3S displacive quantum critical point near 134 GPa","class":"theory tied to experimental phase diagram","reference":"https://doi.org/10.1103/b1dd-gzf3"},
+    {"id":"E_PANF","title":"Phonon-assisted nesting descriptor","class":"method","reference":"https://doi.org/10.1038/s41524-026-02160-4"},
+    {"id":"E_BEENET","title":"BEE-NET spectral-function surrogate","class":"method","reference":"https://doi.org/10.1038/s41524-026-01964-8"}
+  ],
+  "edges": [
+    {"from":"E_AMBIENT_CEILING","to":"C_AMBIENT_PRIOR","type":"constrains"},
+    {"from":"E_MRH6","to":"C_QMRH6","type":"parent anchor"},
+    {"from":"E_HG1223","to":"C_QUENCH","type":"experimental precedent"},
+    {"from":"E_MAFH","to":"C_MAFH","type":"parent/theory anchor"},
+    {"from":"E_QCP","to":"C_QCP","type":"mechanism motivation"},
+    {"from":"E_PANF","to":"C_PHYSICS_TRIAGE","type":"method support"},
+    {"from":"E_MAFH","to":"C_PHYSICS_TRIAGE","type":"descriptor support"},
+    {"from":"E_BEENET","to":"C_PHYSICS_TRIAGE","type":"surrogate precedent"}
+  ]
+}
