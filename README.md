@@ -2,7 +2,7 @@
 
 **Open, falsifiable research toward high-Tc and ultimately room-temperature superconductivity.**
 
-> **Status — v0.6.0, 9 September 2026.** This repository contains literature synthesis, speculative candidate hypotheses, transparent screening models, experiment designs, replication standards, and a public evidence-aware research site. **It does not contain experimental proof of a new superconductor.** Every speculative number is labeled as such.
+> **Status — v0.7.0, 21 September 2026.** This repository contains literature synthesis, speculative candidate hypotheses, transparent screening models, experiment designs, replication standards, and a public evidence-aware research site. **It does not contain experimental proof of a new superconductor.** Every speculative number is labeled as such.
 
 ## Research thesis
 
@@ -12,7 +12,7 @@ The useful object is not just a chemical formula. It is:
 
 That framing follows directly from the frontier. High-pressure hydrides show that enormous phonon scales and strong electron-phonon coupling can produce very high Tc, but stability, defects, reaction kinetics, anharmonic/quantum-nuclear effects, and measurement ambiguity are often decisive. Pressure-quenched Hg1223 further demonstrates that a high-Tc state can be trapped at ambient pressure without being thermally stable to room temperature. Those are distinct milestones.
 
-v0.6 adds a second principle: **maximize information gained per expensive calculation or experiment, not the number of candidates generated.**
+v0.6 adds a second principle: **maximize information gained per expensive calculation or experiment, not the number of candidates generated.**\n\nv0.7 adds a third: **a superconducting state is not technologically useful until its retention envelope is measured.** The repository now treats `Tc` and retained-state survivability as independent objectives and introduces a machine-readable state recipe plus multi-path escape kinetics.
 
 ## Current hypotheses
 
@@ -25,7 +25,7 @@ v0.6 adds a second principle: **maximize information gained per expensive calcul
 | L3-RC-H9 | Li3Rh1-yCoyH9 | <=15 GPa | asks whether Rh-like pairing and Co-like lower-pressure stability can be partially decoupled | convex hull + QNE-aware phonons; require a contiguous stable basin, not a single interpolated point |
 | YFRH20 | Y3Fe3RuH20 | recovered 0 GPa | recovery-first lane: engineer electronic H weight inside a recoverable hydride topology | constrained CSP; reject if recovered topology phase-separates or H DOS at EF remains negligible |
 
-## Quantitative screening — with guardrails
+## v0.7 — retained-state engineering\n\nThe new engineering quantity is a retention surface `S(T,t,P,history)`: the probability that the verified target state still exists after a specified storage or handling trajectory. This separates ambient-pressure superconductivity from room-temperature survivability. A useful intermediate target may be a high-Tc state that can be manufactured and stored at room temperature even if operation still requires cooling.\n\nThe code in `src/super_materials/retention.py` models multiple competing activated escape channels as a transparent screening baseline. `data/state_recipe_schema_v07.json` defines the minimum metadata needed to make successful and failed retained states reusable. See `research/retained_state_engineering_v07.md`.\n\n## Quantitative screening — with guardrails
 
 The early candidate models intentionally use inexpensive tight-binding / phenomenological inputs plus Allen–Dynes screening. With mu*=0.10, the central toy-model estimates are about 150 K for MIRH-25 and 224 K for LMBH-25. Their broad parameter sweeps extend much wider. **These are hypothesis-calibration values, not DFT results and not predictions of observed Tc.** Any candidate must survive structure, thermodynamics, defects, anharmonic/QNE physics, full electron-phonon calculations, and ultimately experiment before promotion.
 
@@ -80,7 +80,7 @@ Expected URL: **https://svyable.github.io/super-materials/**
 
 ## Key research notes
 
-- `research/decision_intelligence_v06.md`
+- `research/retained_state_engineering_v07.md`\n- `data/state_recipe_schema_v07.json`\n- `data/retention_targets_v07.csv`\n- `research/decision_intelligence_v06.md`
 - `research/physics_informed_screening_v06.md`
 - `research/surrogate_active_learning_v06.md`
 - `research/replication_standard_v06.md`
