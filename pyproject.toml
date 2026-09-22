@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "super-materials"
-version = "0.6.0"
-description = "Falsifiable computational screening package for speculative high-Tc hydrides"
+version = "0.7.0"
+description = "Falsifiable research package for high-Tc superconductivity and retained-state engineering"
 requires-python = ">=3.10"
 dependencies = ["numpy>=1.24", "matplotlib>=3.7"]
 

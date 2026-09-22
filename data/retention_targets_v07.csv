@@ -1,0 +1,7 @@
+target_id,temperature_k,lifetime_seconds,lifetime_label,attempt_frequency_hz,single_barrier_requirement_ev,interpretation
+R77_3D,77,259200,3 days,1e13,0.2813,cryogenic retention calibration
+R200_1D,200,86400,1 day,1e13,0.7118,thermal fragility checkpoint
+R250_1D,250,86400,1 day,1e13,0.8897,warm handling checkpoint
+R300_1D,300,86400,1 day,1e13,1.0677,room-temperature handling
+R300_1W,300,604800,1 week,1e13,1.1180,room-temperature logistics
+R300_1Y,300,31536000,1 year,1e13,1.2202,room-temperature storage

@@ -2,7 +2,7 @@
 
 **Open, falsifiable research toward high-Tc and ultimately room-temperature superconductivity.**
 
-> **Status — v0.6.0, 9 September 2026.** This repository contains literature synthesis, speculative candidate hypotheses, transparent screening models, experiment designs, replication standards, and a public evidence-aware research site. **It does not contain experimental proof of a new superconductor.** Every speculative number is labeled as such.
+> **Status — v0.7.0, 21 September 2026.** This repository contains literature synthesis, speculative candidate hypotheses, transparent screening models, experiment designs, replication standards, and a public evidence-aware research site. **It does not contain experimental proof of a new superconductor.** Every speculative number is labeled as such.
 
 ## Research thesis
 
@@ -14,6 +14,8 @@ That framing follows directly from the frontier. High-pressure hydrides show tha
 
 v0.6 adds a second principle: **maximize information gained per expensive calculation or experiment, not the number of candidates generated.**
 
+v0.7 adds a third: **a superconducting state is not technologically useful until its retention envelope is measured.** The repository now treats `Tc` and retained-state survivability as independent objectives and introduces a machine-readable state recipe plus multi-path escape kinetics.
+
 ## Current hypotheses
 
 | Lane | Research object | Target | Why it exists | Fastest serious falsifier |
@@ -24,6 +26,12 @@ v0.6 adds a second principle: **maximize information gained per expensive calcul
 | MAFH-gradient | Mg2-xAlxFeH6-delta | 0 GPa | tests carrier engineering around the predicted MgAlFeH6 endpoint | Hall + stoichiometry + ordered/SQS DFT; reject if carriers pin, magnetism wins, or H vacancies erase the intended doping |
 | L3-RC-H9 | Li3Rh1-yCoyH9 | <=15 GPa | asks whether Rh-like pairing and Co-like lower-pressure stability can be partially decoupled | convex hull + QNE-aware phonons; require a contiguous stable basin, not a single interpolated point |
 | YFRH20 | Y3Fe3RuH20 | recovered 0 GPa | recovery-first lane: engineer electronic H weight inside a recoverable hydride topology | constrained CSP; reject if recovered topology phase-separates or H DOS at EF remains negligible |
+
+## v0.7 — retained-state engineering
+
+The new engineering quantity is a retention surface `S(T,t,P,history)`: the probability that the verified target state still exists after a specified storage or handling trajectory. This separates ambient-pressure superconductivity from room-temperature survivability. A useful intermediate target may be a high-Tc state that can be manufactured and stored at room temperature even if operation still requires cooling.
+
+The code in `src/super_materials/retention.py` models multiple competing activated escape channels as a transparent screening baseline. `data/state_recipe_schema_v07.json` defines the minimum metadata needed to make successful and failed retained states reusable. See `research/retained_state_engineering_v07.md`.
 
 ## Quantitative screening — with guardrails
 
@@ -80,6 +88,9 @@ Expected URL: **https://svyable.github.io/super-materials/**
 
 ## Key research notes
 
+- `research/retained_state_engineering_v07.md`
+- `data/state_recipe_schema_v07.json`
+- `data/retention_targets_v07.csv`
 - `research/decision_intelligence_v06.md`
 - `research/physics_informed_screening_v06.md`
 - `research/surrogate_active_learning_v06.md`

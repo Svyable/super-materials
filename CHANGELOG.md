@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.7.0 — 2026-09-21 retained-state engineering
+
+- Promoted retained-state lifetime from a side calculation to a first-class research objective distinct from Tc and ambient operating pressure.
+- Added a retention-surface framework S(T,t,P,history) and a technology-facing distinction between superconducting transition temperature and room-temperature survivability.
+- Added multi-channel activated escape modeling for competing kinetic failure paths, with survival-probability and retention-temperature utilities.
+- Added a machine-readable state-recipe JSON Schema covering precursor, complete preparation path, retained-state identity, same-state measurements, evidence class, and replication status.
+- Added explicit room-temperature handling/logistics/storage barrier targets without treating them as predicted material barriers.
+- Reframed Q-MRH6 as a failure-boundary mapping experiment whose goal is to learn where structure and superconductivity are lost under decompression.
+- Added a recovery-first "retention scaffold + pairing engine" discovery principle and an Open Superconducting State Atlas data contract.
+
 ## 0.6.0 — 2026-09-09 decision intelligence + replication architecture
 
 - Added a physics-informed pre-DFPT triage layer: projected-DOS geometric mean plus phonon-assisted nesting P(omega), both explicitly non-predictive screening features.
