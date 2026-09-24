@@ -22,5 +22,7 @@ jobs:
           test -s data/experiment_decisions_v06.csv
           python -m json.tool data/claim_evidence_graph_v06.json >/dev/null
           python -m json.tool data/screening_features_v06.json >/dev/null
+          python -m json.tool data/state_recipe_schema_v07.json >/dev/null
+          python -m json.tool data/state_atlas_v08.json >/dev/null
           grep -qi 'experimental proof' README.md
           grep -qi 'falsifier' docs/index.html

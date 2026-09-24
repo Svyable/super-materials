@@ -1,6 +1,9 @@
+import json
 import math
 import unittest
+from pathlib import Path
 from super_materials.decision import binary_entropy_bits, posterior_probability, expected_information_gain_bits
+from super_materials.atlas import validate_atlas_document, atlas_summary, generate_q_mrh6_campaign
 from super_materials.kinetics import barrier_for_lifetime
 from super_materials.retention import escape_rate, survival_probability, retention_temperature
 from super_materials.models import allen_dynes_tc
@@ -32,6 +35,20 @@ class CoreTests(unittest.TestCase):
     def test_retention_temperature_is_finite(self):
         t=retention_temperature(86400,[1.2],target_survival=0.5,max_temperature_k=1000)
         self.assertTrue(250 < t < 400)
+    def test_state_atlas_validates(self):
+        document=json.loads(Path("data/state_atlas_v08.json").read_text())
+        self.assertEqual(validate_atlas_document(document), [])
+    def test_state_atlas_summary(self):
+        document=json.loads(Path("data/state_atlas_v08.json").read_text())
+        summary=atlas_summary(document)
+        self.assertEqual(summary["records"],5)
+        self.assertEqual(summary["superconductivity_true"],2)
+        self.assertEqual(summary["superconductivity_false"],1)
+    def test_q_mrh6_campaign_is_factorial(self):
+        runs=generate_q_mrh6_campaign()
+        self.assertEqual(len(runs),12)
+        self.assertEqual(len({r["run_id"] for r in runs}),12)
+        self.assertTrue(all(r["pressure_ladder_gpa"][-1] == 0 for r in runs))
     def test_allen_dynes_positive(self):
         self.assertGreater(allen_dynes_tc(1.8,1650),100)
     def test_dos_geomean(self):

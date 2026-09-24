@@ -2,7 +2,7 @@
 
 **Open, falsifiable research toward high-Tc and ultimately room-temperature superconductivity.**
 
-> **Status — v0.7.0, 21 September 2026.** This repository contains literature synthesis, speculative candidate hypotheses, transparent screening models, experiment designs, replication standards, and a public evidence-aware research site. **It does not contain experimental proof of a new superconductor.** Every speculative number is labeled as such.
+> **Status — v0.8.0, 24 September 2026.** This repository contains literature synthesis, speculative candidate hypotheses, transparent screening models, experiment designs, replication standards, and a public evidence-aware research site. **It does not contain experimental proof of a new superconductor.** Every speculative number is labeled as such.
 
 ## Research thesis
 
@@ -32,6 +32,14 @@ v0.7 adds a third: **a superconducting state is not technologically useful until
 The new engineering quantity is a retention surface `S(T,t,P,history)`: the probability that the verified target state still exists after a specified storage or handling trajectory. This separates ambient-pressure superconductivity from room-temperature survivability. A useful intermediate target may be a high-Tc state that can be manufactured and stored at room temperature even if operation still requires cooling.
 
 The code in `src/super_materials/retention.py` models multiple competing activated escape channels as a transparent screening baseline. `data/state_recipe_schema_v07.json` defines the minimum metadata needed to make successful and failed retained states reusable. See `research/retained_state_engineering_v07.md`.
+
+## v0.8 — Open Superconducting State Atlas
+
+The retained-state framework now has literature-backed calibration data rather than an empty schema. `data/state_atlas_v08.json` starts with Hg1223, Y3Fe4H20, matched amorphous/crystalline Pd-hydride pathways, and Mg2RhH6 as an explicitly unresolved recovery anchor. Missing quantities remain null rather than inferred.
+
+`src/super_materials/atlas.py` validates atlas records, summarizes the evidence set, and deterministically generates the 12-run Q-MRH6 first-wave campaign in `data/q_mrh6_campaign_v08.csv`. The campaign compares decompression path × isotope × precursor microstructure while requiring the same state to carry both phase and transport evidence.
+
+See `research/state_atlas_v08.md`.
 
 ## Quantitative screening — with guardrails
 
@@ -88,6 +96,9 @@ Expected URL: **https://svyable.github.io/super-materials/**
 
 ## Key research notes
 
+- `research/state_atlas_v08.md`
+- `data/state_atlas_v08.json`
+- `data/q_mrh6_campaign_v08.csv`
 - `research/retained_state_engineering_v07.md`
 - `data/state_recipe_schema_v07.json`
 - `data/retention_targets_v07.csv`

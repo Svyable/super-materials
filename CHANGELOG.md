@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.8.0 — 2026-09-24 Open Superconducting State Atlas
+
+- Populated the retained-state framework with DOI-resolved literature calibration records rather than leaving the schema empty.
+- Added Hg1223 as a superconducting-retention/thermal-degradation calibration, Y3Fe4H20 as a structural-retention/non-superconducting control, matched amorphous/crystalline Pd hydride pathways as a precursor-state control, and Mg2RhH6 as an explicitly unresolved recovery anchor.
+- Added a lightweight atlas validator that rejects missing provenance, invalid pressures/evidence classes, duplicate state IDs, and malformed retention observations without silently imputing values.
+- Added atlas summary utilities for dashboard/CI use.
+- Added a deterministic 12-run Q-MRH6 factorial campaign spanning decompression profile × isotope × precursor microstructure with a fixed pressure ladder and mandatory same-state phase/transport linkage.
+- Preserved transformed, degraded, negative, and unresolved states as first-class data.
+- Extended CI to validate the atlas and state-recipe JSON artifacts.
+
 ## 0.7.0 — 2026-09-21 retained-state engineering
 
 - Promoted retained-state lifetime from a side calculation to a first-class research objective distinct from Tc and ambient operating pressure.
