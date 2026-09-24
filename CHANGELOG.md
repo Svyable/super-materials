@@ -9,6 +9,7 @@
 - Added a deterministic 12-run Q-MRH6 factorial campaign spanning decompression profile × isotope × precursor microstructure with a fixed pressure ladder and mandatory same-state phase/transport linkage.
 - Preserved transformed, degraded, negative, and unresolved states as first-class data.
 - Extended CI to validate the atlas and state-recipe JSON artifacts.
+- Exposed the State Atlas and Q-MRH6 campaign on the public research site, including degraded, transformed, negative and unresolved outcomes.
 
 ## 0.7.0 — 2026-09-21 retained-state engineering
 
