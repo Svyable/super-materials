@@ -1,0 +1,220 @@
+{
+  "version": "0.8.0",
+  "purpose": "Literature-grounded calibration states for retained-state engineering. Missing values are null rather than inferred.",
+  "records": [
+    {
+      "state_id": "lit-hg1223-pq-18p9gpa-4p2k",
+      "role": "superconducting_retention_calibration",
+      "material": {
+        "name": "Hg1223",
+        "formula": "HgBa2Ca2Cu3O8+δ"
+      },
+      "source": {
+        "title": "Ambient-pressure 151-K superconductivity in HgBa2Ca2Cu3O8+δ via pressure quench",
+        "doi": "10.1073/pnas.2536178123",
+        "year": 2026,
+        "source_class": "peer_reviewed_experiment"
+      },
+      "preparation": {
+        "precursor": "single-crystal Hg1223",
+        "formation_or_quench_pressure_gpa": 18.9,
+        "quench_temperature_k": 4.2,
+        "route": "pressure-quench protocol"
+      },
+      "retained_state": {
+        "pressure_gpa": 0,
+        "status": "retained_then_thermally_degraded",
+        "max_reported_retained_tc_k": 151,
+        "superconductivity_observed": true,
+        "evidence_level": "transport",
+        "structural_support": "Synchrotron XRD on pressure-quenched Hg1223 supports a retained strained/defected state, but the atlas does not assume every structural measurement is from the identical 151 K specimen."
+      },
+      "retention_observations": [
+        {
+          "temperature_k": 77,
+          "duration_s": 259200,
+          "status": "retained",
+          "note": "A pressure-quenched phase with Tc=149 K was reported retained inside the DAC for at least 3 days."
+        },
+        {
+          "temperature_k": 170,
+          "duration_s": null,
+          "status": "retained_with_slight_tc_decrease",
+          "note": "The reported pressure-quenched state remained stable through cycling up to about 170 K, with slight loss of retained Tc."
+        },
+        {
+          "temperature_k": 300,
+          "duration_s": null,
+          "status": "degraded",
+          "note": "Cycling to room temperature reduced a retained ambient-pressure Tc from 147 K to 143 K; this is degradation, not a sharp universal failure temperature."
+        }
+      ],
+      "limitations": [
+        "Retention kinetics are not reduced to a single activation barrier by the source.",
+        "Do not generalize the 151 K result to room-temperature storage stability.",
+        "Post-quench bulk magnetic confirmation is not encoded here unless explicitly tied to the retained state."
+      ]
+    },
+    {
+      "state_id": "lit-y3fe4h20-room-temperature-recovery",
+      "role": "structural_retention_positive_superconductivity_negative_control",
+      "material": {
+        "name": "Y3Fe4H20",
+        "formula": "Y3Fe4H20"
+      },
+      "source": {
+        "title": "Ambient pressure recovery of the structurally unconventional hydride Y3Fe4H20",
+        "doi": "10.1038/s41467-026-74232-4",
+        "year": 2026,
+        "source_class": "peer_reviewed_experiment"
+      },
+      "preparation": {
+        "precursor": "hydrogenated Y-Fe compound in hydrogen",
+        "formation_or_quench_pressure_gpa": 60,
+        "quench_temperature_k": null,
+        "route": "laser-heated DAC synthesis followed by room-temperature decompression"
+      },
+      "retained_state": {
+        "pressure_gpa": 0,
+        "status": "retained_with_hydrogen_loss_on_longer_times",
+        "max_reported_retained_tc_k": null,
+        "superconductivity_observed": false,
+        "evidence_level": "phase_linked",
+        "structural_support": "Single-crystal XRD followed the orthorhombic Cmcm phase during decompression to ambient pressure."
+      },
+      "retention_observations": [
+        {
+          "temperature_k": 300,
+          "duration_s": 108000,
+          "status": "retained",
+          "note": "XRD established ambient-pressure metastability for about 30 hours in one run."
+        },
+        {
+          "temperature_k": 300,
+          "duration_s": null,
+          "status": "degraded_over_month_scale",
+          "note": "Recovered samples examined after about one to three months showed a 7–8% volume reduction attributed to hydrogen desorption."
+        }
+      ],
+      "limitations": [
+        "The material is reported metallic but non-superconducting.",
+        "Month-scale observations indicate structural persistence can coexist with continuing hydrogen loss.",
+        "60 GPa is the lowest synthesis pressure reported for emergence of the phase, not a universal formation threshold."
+      ]
+    },
+    {
+      "state_id": "lit-pdh3-amorphous-precursor-pathway",
+      "role": "precursor_pathway_calibration",
+      "material": {
+        "name": "PdH3 high-pressure product",
+        "formula": "PdH3"
+      },
+      "source": {
+        "title": "High-Pressure Synthesis of Metastable Superhydride PdH3 by Using Amorphous Pd as a Starting Material",
+        "doi": "10.1021/acsnano.5c06652",
+        "year": 2025,
+        "source_class": "peer_reviewed_experiment"
+      },
+      "preparation": {
+        "precursor": "amorphous Pd nanoparticles",
+        "formation_or_quench_pressure_gpa": 32.2,
+        "quench_temperature_k": null,
+        "route": "~2000 K high-pressure synthesis followed by unloading"
+      },
+      "retained_state": {
+        "pressure_gpa": 0,
+        "status": "transformed_on_recovery",
+        "max_reported_retained_tc_k": null,
+        "superconductivity_observed": null,
+        "evidence_level": "phase_linked",
+        "structural_support": "The high-pressure PdH3 product was not retained as PdH3; unloading produced PdH1.3."
+      },
+      "retention_observations": [
+        {
+          "temperature_k": 300,
+          "duration_s": null,
+          "status": "different_recovered_hydride",
+          "note": "After unloading to ambient conditions the reported recovered composition was PdH1.3."
+        }
+      ],
+      "limitations": [
+        "This is a pathway/precursor calibration, not evidence for retained PdH3 superconductivity.",
+        "The source demonstrates that amorphous and crystalline Pd precursors follow different hydride pathways."
+      ]
+    },
+    {
+      "state_id": "lit-pd-crystalline-precursor-control",
+      "role": "precursor_control",
+      "material": {
+        "name": "crystalline-Pd hydride pathway",
+        "formula": "Pd3H5 -> PdH0.706"
+      },
+      "source": {
+        "title": "High-Pressure Synthesis of Metastable Superhydride PdH3 by Using Amorphous Pd as a Starting Material",
+        "doi": "10.1021/acsnano.5c06652",
+        "year": 2025,
+        "source_class": "peer_reviewed_experiment"
+      },
+      "preparation": {
+        "precursor": "crystalline fcc Pd nanoparticles",
+        "formation_or_quench_pressure_gpa": 33.5,
+        "quench_temperature_k": null,
+        "route": "~2000 K high-pressure control synthesis followed by unloading"
+      },
+      "retained_state": {
+        "pressure_gpa": 0,
+        "status": "transformed_on_recovery",
+        "max_reported_retained_tc_k": null,
+        "superconductivity_observed": null,
+        "evidence_level": "phase_linked",
+        "structural_support": "Crystalline precursor produced Pd3H5 under high pressure and PdH0.706 after quenching to ambient conditions."
+      },
+      "retention_observations": [
+        {
+          "temperature_k": 300,
+          "duration_s": null,
+          "status": "different_recovered_hydride",
+          "note": "Recovered composition was reported as PdH0.706 rather than the amorphous-precursor PdH1.3 outcome."
+        }
+      ],
+      "limitations": [
+        "This is a matched pathway control, not a superconductivity result.",
+        "It is included because precursor disorder is itself an experimentally demonstrated state variable."
+      ]
+    },
+    {
+      "state_id": "lit-mg2rhh6-30gpa-formation-anchor",
+      "role": "q_mrh6_formation_anchor",
+      "material": {
+        "name": "Mg2RhH6",
+        "formula": "Mg2RhH6"
+      },
+      "source": {
+        "title": "Superconducting Hydride Mg2RhH6 Experimentally Achieved at Lower Pressure",
+        "doi": "10.1021/jacs.6c08889",
+        "year": 2026,
+        "source_class": "peer_reviewed_experiment"
+      },
+      "preparation": {
+        "precursor": "Mg2RhH5",
+        "formation_or_quench_pressure_gpa": 30,
+        "quench_temperature_k": null,
+        "route": "two-step H5 precursor to H6 octahedral hydride via additional hydrogen insertion"
+      },
+      "retained_state": {
+        "pressure_gpa": 30,
+        "status": "high_pressure_superconducting_anchor_retention_unresolved",
+        "max_reported_retained_tc_k": 24,
+        "superconductivity_observed": true,
+        "evidence_level": "transport",
+        "structural_support": "The source reports synthesis/structure characterization and zero resistance with magnetic-field suppression of Tc."
+      },
+      "retention_observations": [],
+      "limitations": [
+        "No ambient-pressure superconducting state is asserted by this atlas record.",
+        "The 30 GPa entry is a formation/operation anchor for Q-MRH6 retention experiments, not a recovered-state claim.",
+        "The source reports Tc increasing to 29 K for synthesis at 53 GPa."
+      ]
+    }
+  ]
+}
